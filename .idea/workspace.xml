@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7d90ea9-f749-43e0-9a32-050640fb3369" name="Default Changelist" comment="" />
+    <list default="true" id="c7d90ea9-f749-43e0-9a32-050640fb3369" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/articles.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/liens.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tp_bibliotheque.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tp_bibliotheque.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Articles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -112,9 +134,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProjectId" id="1khCKJ14nWBNt5HsVN1QmD0dgbx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -139,7 +163,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606143371129</updated>
-      <workItem from="1606143372251" duration="2801000" />
+      <workItem from="1606143372251" duration="3959000" />
+      <workItem from="1606161462006" duration="1000000" />
+      <workItem from="1606206734142" duration="20963000" />
     </task>
     <servers />
   </component>
@@ -147,13 +173,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="453" y="183" key="NewPhpClassDialog" timestamp="1606145593235">
+    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1606234883788">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="453" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1606145593235" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606145691515">
+    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1606234883788" />
+    <state x="566" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606226668775">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606145691515" />
+    <state x="566" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1606226668775" />
+    <state x="453" y="183" key="NewPhpClassDialog" timestamp="1606211121447">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="453" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1606211121447" />
+    <state x="427" y="176" width="586" height="548" key="find.popup" timestamp="1606210509571">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="427" y="176" width="586" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606210509571" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606164339367">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606164339367" />
   </component>
 </project>
