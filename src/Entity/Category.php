@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
     /**
      *@ORM\Entity(repositoryClass=CategoryRepository::class)
      */
-
+// je creer les entitées de ma table
 class Category
 {
 
@@ -17,89 +17,91 @@ class Category
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-            private $id;
+    private $id;
 
 
     /**
      * @@ORM\Column(type="string")
      *
-     */     private $title;
+     */
+    private $title;
 
 
     /**
      *@ORM\Column(type="string")
      *
-     */     private $color;
+     */
+    private $color;
 
      /**
      * @ORM\Column(type="date", name="date_publication")
      */
-            private $date;
+     private $date;
 
     /**
      * @ORM\Column(type="datetime", name="created")
      */
-            private $created;
+    private $created;
 
     /**
      * @ORM\Column(type="boolean", name="published")
      */
-            private $published;
+    private $published;
 
 
-             public function getTitle(): ?string
-             {
-                 return $this->title;
-             }
+     public function getTitle(): ?string
+     {
+         return $this->title;
+     }
 
 
-             public function getColor(): ?string
-            {
-                return $this->color;
-            }
+     public function getColor(): ?string
+    {
+        return $this->color;
+    }
 
-            public function setColor(string $color): self
-            {
-                $this->color = $color;
+    public function setColor(string $color): self
+    {
+        $this->color = $color;
 
-                return $this;
-            }
+        return $this;
+    }
 
-            public function getDate(): ?\DateTimeInterface
-            {
-                return $this->date;
-            }
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
 
-            public function setDate(\DateTimeInterface $date): self
-            {
-                $this->date = $date;
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
-                return $this;
-            }
+        return $this;
+    }
 
-            public function getCreated(): ?\DateTimeInterface
-            {
-                return $this->created;
-            }
+    public function getCreated(): ?\DateTimeInterface
+    {
+        return $this->created;
+    }
 
-            public function setCreated(\DateTimeInterface $created): self
-            {
-                $this->created = $created;
+    public function setCreated(\DateTimeInterface $created): self
+    {
+        $this->created = $created;
 
-                return $this;
-            }
+        return $this;
+    }
 
-            public function getPublished(): ?bool
-            {
-                return $this->published;
-            }
+    public function getPublished(): ?bool
+    {
+        return $this->published;
+    }
 
-            public function setPublished(bool $published): self
-            {
-                $this->published = $published;
+    public function setPublished(bool $published): self
+    {
+        $this->published = $published;
 
-                return $this;
-            }
+        return $this;
+    }
 
 
 

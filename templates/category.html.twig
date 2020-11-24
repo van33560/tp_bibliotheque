@@ -1,17 +1,16 @@
-{% extends 'base.html.twig' %}
+    {% extends 'base.html.twig' %}
 
-{% block title %}
+    {% block title %}
     mes category
-{% endblock %}
+    {% endblock %}
 
-{% block main %}
+    {% block main %}
     <h1>Mes  categorie</h1>
+    {# je rappel le contenu de mes categories#}
     {% for category in category %}
-        <h1>{{ category.title }}</h1>
-        <h2 style="color: {{ category.color }}"></h2>
-        <h4>{{ category.color }}</h4>
-
-
+    <h1>{{ category.title }}</h1>
+    <h2 style="color: {{ category.color }}"></h2>
+    <h4>{{ category.color }}</h4>
 
     {% endfor %}
-{% endblock %}
+    {% endblock %}
