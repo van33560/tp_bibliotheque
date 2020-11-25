@@ -14,9 +14,10 @@ Tous mes articles
     <h2>
  {# avec la propriete path j'appel un de mes articles qui sera clipable et qui affichera le contenu de ma page modify_static.html.twig#}
     <span>
-        <a href="{{ path('article_modify_static', {'id':article.id}) }}">cliquer</a>
+        <a href="{{ path('article_delete', {'id':article.id}) }}">supprimer</a>
     </span>
 {# avec la proprieté path je recupére un titre de mes articles et son id, grace au name de ma route articles #}
+    <h2>
         <a href="{{ path('articlelist', {'id':article.id}) }}">{{ article.title }}</a>
     </h2>
     <p>{{ article.content }}</p>
