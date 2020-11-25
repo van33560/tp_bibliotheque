@@ -9,7 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CategoryController extends AbstractController
-//je creer avec ma route un chemin avec ma route,j'utilisema methode repository pour recuperer tous le contenu de mes categories
+//je creer avec ma route un chemin ,j'utilise ma methode repository et find all pour recuperer tous le contenu de mes categories
+//
 {
 
     /**
@@ -23,4 +24,4 @@ class CategoryController extends AbstractController
         "category"=> $category
     ]);
     }
-    }
+}

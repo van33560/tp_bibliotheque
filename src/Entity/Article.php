@@ -1,53 +1,51 @@
 <?php
 
-
 namespace App\Entity;
+
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-   /**
-    *@ORM\Entity(repositoryClass=ArticleRepository::class);
-    */
-// avec ORM je creer le contenu de ma table en donnant des valeurs, proprieté private securise les données  //
+/**
+ * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ */
 class Article
 {
-
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\Id
+     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
-
     /**
-     * @ORM\Column(type="string")
-     *
+     * @ORM\Column(type="string", length=255)
      */
     private $title;
 
-
     /**
-     *@ORM\Column(type="string",length=300)
-     *
+     * @ORM\Column(type="text", nullable=true)
      */
     private $content;
 
     /**
-     *@ORM\Column(type="string")
-     *
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
 
     /**
-     * @ORM\Column(type="date", name="date_publication")
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $date;
+    private $publicationDate;
 
     /**
-     * @ORM\Column(type="boolean", name="published")
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $published;
+    private $creationDate;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isPublished;
 
     /**
      * @return mixed
@@ -109,17 +107,33 @@ class Article
     /**
      * @return mixed
      */
-    public function getDate()
+    public function getPublicationDate()
     {
-        return $this->date;
+        return $this->publicationDate;
     }
 
     /**
-     * @param mixed $date
+     * @param mixed $publicationDate
      */
-    public function setDate($date): void
+    public function setPublicationDate($publicationDate): void
     {
-        $this->date = $date;
+        $this->publicationDate = $publicationDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * @param mixed $creationDate
+     */
+    public function setCreationDate($creationDate): void
+    {
+        $this->creationDate = $creationDate;
     }
 
     /**
@@ -127,17 +141,16 @@ class Article
      */
     public function getPublished()
     {
-        return $this->published;
+        return $this->isPublished;
     }
 
     /**
-     * @param mixed $published
+     * @param mixed $isPublished
      */
-    public function setPublished($published): void
+    public function setPublished($isPublished): void
     {
-        $this->published = $published;
+        $this->isPublished = $isPublished;
     }
-
 
 
 

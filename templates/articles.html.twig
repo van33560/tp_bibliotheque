@@ -7,15 +7,17 @@
 
 
     {% block main %}
+
     <h1> Tous les articles</h1>
     {% for article in articles %}
     {# avec la boucle for j'appel un article dans mes articles avec le lien a href  #}
     <h2>
+     {# avec la propriete path j'appel un de mes articles qui sera clipable#}
     <a href="{{ path('articleShow', {'id':article.id}) }}"> {{ article.title }}</a>
     </h2>
     <p>{{ article.content }}</p>
-    {# j'appel mes images et mes titre  #}
+    {# j'appel mes images et mes titres  #}
     <img src="{{ article.image }}" alt="{{ article.title }}">
-
     {% endfor %}
+
     {% endblock main%}

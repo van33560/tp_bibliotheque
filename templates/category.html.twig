@@ -5,12 +5,13 @@
     {% endblock %}
 
     {% block main %}
-    <h1>Mes  categorie</h1>
-    {# je rappel le contenu de mes categories#}
+    <h1>Mes  categories</h1>
+    {# je rappel le contenu de mes categories j'affiche un titre avec une couleur#}
     {% for category in category %}
+
     <h1>{{ category.title }}</h1>
     <h2 style="color: {{ category.color }}"></h2>
     <h4>{{ category.color }}</h4>
-
     {% endfor %}
+
     {% endblock %}
