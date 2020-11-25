@@ -1,23 +1,27 @@
-    {% extends "base.html.twig" %}
+{% extends "base.html.twig" %}
 
-    {% block title %}
-    tous mes articles
-    {% endblock %}
+{% block title %}
+Tous mes articles
+{% endblock %}
 
 
 
-    {% block main %}
+{% block main %}
 
     <h1> Tous les articles</h1>
-    {% for article in articles %}
-    {# avec la boucle for j'appel un article dans mes articles avec le lien a href  #}
+{% for article in articles %}
+{# avec la boucle for j'appel un article dans mes articles avec clipable avec le lien a href  #}
     <h2>
-     {# avec la propriete path j'appel un de mes articles qui sera clipable#}
-    <a href="{{ path('articleShow', {'id':article.id}) }}"> {{ article.title }}</a>
+ {# avec la propriete path j'appel un de mes articles qui sera clipable et qui affichera le contenu de ma page modify_static.html.twig#}
+    <span>
+        <a href="{{ path('article_modify_static', {'id':article.id}) }}">cliquer</a>
+    </span>
+{# avec la proprieté path je recupére un titre de mes articles et son id, grace au name de ma route articles #}
+        <a href="{{ path('articlelist', {'id':article.id}) }}">{{ article.title }}</a>
     </h2>
     <p>{{ article.content }}</p>
-    {# j'appel mes images et mes titres  #}
+{# j'appel mes images et mes titres  #}
     <img src="{{ article.image }}" alt="{{ article.title }}">
-    {% endfor %}
+{% endfor %}
 
-    {% endblock main%}
+{% endblock main%}

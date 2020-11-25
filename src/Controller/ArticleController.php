@@ -42,29 +42,53 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     ]);
 
     }
+    //je crée une route un chemin de l'url et je lui donne un nom
+/**
+* @route("/article/insert-static",name="article_insert_static")
+*/
+    //inserer un article dans la BDD grace a la propriété entitymanager qui me permet de faire des requétes insert,into,delete
+    public function insertStaticArticle(EntityManagerInterface $entityManager)
+{
+    //j'utilise les proprietes de ma class entité nouvelle objet pour créer des nouveaux champs dans ma table
+    //la class = structure, new = entité, que symfony instancie à ma place
+    $article = new Article();
 
-        /**
-         * @route("/article/insert-static",name="article_insert_static")
-         */
-        //inserer un article dans la BDD
-        public function insertStaticArticle(EntityManagerInterface $entityManager)
-        {
-            $article = new Article();
+    $article->setTitle("Titre de mon article");
+    $article->setContent("contenu de mon article");
+    $article->setImage("https://www.lapiscine.pro/wp-content/uploads/2017/05/LaPiscine_2017_BDX.jpg");
+    $article->setCreationDate(new \DateTime());
+    $article->setPublicationDate(new \DateTime());
+    $article->setPublished(true);
 
-            $article->setTitle("Titre de mon article");
-            $article->setContent("contenu de mon article");
-            $article->setImage("https://www.lapiscine.pro/wp-content/uploads/2017/05/LaPiscine_2017_BDX.jpg");
-            $article->setCreationDate(new \DateTime());
-            $article->setPublicationDate(new \DateTime());
-            $article->setPublished(true);
+    //j'insère mes données statiques dans ma table article de ma BDD,
+    // persist et une methode qui va pré-sauvegarder les entrées de ma table article
+    $entityManager->persist($article);
+    $entityManager->flush();
 
 
-            $entityManager->persist($article);
-            $entityManager->flush();
+    return $this->render('insert_static.html.twig');
+}
+
+   //je crée une route un chemin de l'url avec un id et je lui donne un nom
+/**
+ * @route("/article/update-static/{id}",name="article_modify_static")
+ */
+   //je crée une methode updatestaticarticle qui aura pour parametres $id,articlerepository(qui me permettra de recuperer
+   //les données de la base de données) et entitymanagerinterface (qui me permettra de faire des requetes ici update pour modifier)
+   // ces classes seront intanciés par symfony à ma place
+    public function UpdateStaticArticle($id,ArticleRepository $articleRepository,EntityManagerInterface $entityManager)
+{
+    //la fonction find me permettra d'aller récuperer l'id de mon article
+    $article=$articleRepository->find($id);
+    //le setter setTile va me permettre de modifier le contenu de mon titre
+    $article-> setTitle(' nouveau titre');
+    //la fonction persist permet de pré-sauvegarder la modification
+    $entityManager->persist($article);
+    // la fonction flush permet d'inserer la pré-sauvegarde
+    $entityManager->flush();
+    // la fonction render permet de retrouner un visuel via le fichier modify_static.html.twig
+    return $this->render('modify_static.html.twig');
+}
 
 
-            return $this->render('insert_static.html.twig');
-        }
-
-
-    }
+}
