@@ -53,7 +53,12 @@ class Category
      {
          return $this->title;
      }
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
+        return $this;
+    }
 
      public function getColor(): ?string
     {
@@ -61,8 +66,7 @@ class Category
     }
 
     public function setColor(string $color): self
-    {
-        $this->color = $color;
+    {$this->color = $color;
 
         return $this;
     }
@@ -105,4 +109,4 @@ class Category
 
 
 
-}
+    }
