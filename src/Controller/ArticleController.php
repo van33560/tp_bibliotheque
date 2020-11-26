@@ -2,9 +2,11 @@
 
 
 namespace App\Controller;
+
+
 use App\Entity\Article;
+use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
-use phpDocumentor\Reflection\Type;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -13,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
     class ArticleController extends AbstractController
     //la route articles me permet d'afficher le chemin dans l'url
-    {
+ {
     /**
     * @Route("/articles", name="articlelist")
     */
@@ -108,7 +110,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     //la fonction flush insere les nouvelles modifs
         $entityManager->flush();
     //j'ajoute un message de type flash qui s'affichera a la suppression de l'article
-      $this->addFlash  (
+        $this->addFlash(
           "success",
           "l'article a été supprimé"
         );
@@ -118,9 +120,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     return $this->redirectToRoute('articlelist');
 
 }
+/**
+ * @route("/article/insert",name="article_insert")
+*/
 
-
-
-}
+    //je crée une methode pour créer un formulaire avec la methode insertArticle
+    public function insertArticle()
+    {
+        //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
+        $form = $this->createForm(ArticleType::class);
+        //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
+        $formView = $form-> createView();
+       //la fonction render me permet d'envoyer a twig les infos qui seront afficher
+        return $this->render('insert.html.twig',[
+            'formView' => $formView
+        ]);
+  }
+ }
 
 
