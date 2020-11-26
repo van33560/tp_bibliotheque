@@ -3,7 +3,8 @@
 
 
 {% block message %}
-
+{# je mets mon message dans un block message, qui  est redefini dan mon fichier twig#}
+{#  si mon message est supprimé j'affiche mon message grace a la variable globale app sur l page principale#}
     {%  for message in app.flashes ('success') %}
     <p>{{ message }}</p>
     {% endfor %}

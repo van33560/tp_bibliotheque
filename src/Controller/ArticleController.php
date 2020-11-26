@@ -107,14 +107,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
         $entityManager->remove($article);
     //la fonction flush insere les nouvelles modifs
         $entityManager->flush();
-
+    //j'ajoute un message de type flash qui s'affichera a la suppression de l'article
       $this->addFlash  (
           "success",
           "l'article a été supprimé"
         );
 
     }
-    // la fonction render permet de retrouner un visuel via le fichier delete_article.html.twig
+    // la fonction redirecttoroute permet de retrouner un visuel via le name de mon fichier 'articlelist'
     return $this->redirectToRoute('articlelist');
 
 }
