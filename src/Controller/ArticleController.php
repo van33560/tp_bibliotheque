@@ -4,6 +4,7 @@
 namespace App\Controller;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use phpDocumentor\Reflection\Type;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -75,7 +76,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  */
    //je crée une methode updatestaticarticle qui aura pour parametres $id,articlerepository(qui me permettra de recuperer
    //les données de la base de données sf effectuera la requete) et entitymanagerinterface (qui me permettra de faire des requetes ici update pour modifier)
-   // ces classes seront intanciés par symfony à ma place
+   // ces classes seront intanciés par symfony à ma place(static = pour les données en dure das le code)
     public function UpdateStaticArticle($id,ArticleRepository $articleRepository,EntityManagerInterface $entityManager)
 {
     //la fonction find me permettra d'aller récuperer l'id de mon article
@@ -92,24 +93,29 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 /**
  * @route("/article/delete/{id}",name="article_delete")
  */
-    //je crée une methode deletearticle qui aura pour paramétres $id,articlerepository(qui me permettra de récuperer
+    //je crée une methode deletearticle qui aura pour paramétres $id(me permettra de recuperer l'article),articlerepository(qui me permettra de récuperer
     //les données de la base de données, sf effectuera la requete delete) et entityManagerinterface,
     // (qui me permettra de faire des réquetes ici delete)
-    // ces classes seront intanciés par symfony à ma place
+    // ces classes seront intanciés grace a entity manager à ma place
     public function deleteArticle($id,ArticleRepository $articleRepository,EntityManagerInterface $entityManager)
 {
     //je récupére en bdd  l'id wild card qui correspond a celui renseigner dans url
     $article = $articleRepository->find($id);
-    //je fait une condition qui va permettra un fois l'article et l'id supprimé de ne pas afficher de message d'erreur
-    if(!null == ($article)){
+    //je fait une condition qui va permettra de verifier si il y a un article et un fois l'article et l'id supprimés de ne pas afficher de message d'erreur
+    if(!is_null($article)){
     //entitymanager avec le fonction remove effacera l'article dont l'id est renseigné dans url
         $entityManager->remove($article);
-    //la fonction push insere les nouvelles modifs
+    //la fonction flush insere les nouvelles modifs
         $entityManager->flush();
 
+      $this->addFlash  (
+          "success",
+          "l'article a été supprimé"
+        );
+
     }
-    // la fonction render permet de retrouner un visuel via le fichier delete_article.html.twigg
-    return $this->render('delete_article.html.twig');
+    // la fonction render permet de retrouner un visuel via le fichier delete_article.html.twig
+    return $this->redirectToRoute('articlelist');
 
 }
 

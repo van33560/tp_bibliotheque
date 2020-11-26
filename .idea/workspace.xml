@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7d90ea9-f749-43e0-9a32-050640fb3369" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/asset/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/delete_article.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +144,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/asset/css" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -156,7 +161,10 @@
       <workItem from="1606161462006" duration="1000000" />
       <workItem from="1606206734142" duration="22629000" />
       <workItem from="1606251821631" duration="717000" />
-      <workItem from="1606292315730" duration="20167000" />
+      <workItem from="1606292315730" duration="21070000" />
+      <workItem from="1606328898105" duration="5706000" />
+      <workItem from="1606335543364" duration="1367000" />
+      <workItem from="1606379010219" duration="4628000" />
     </task>
     <servers />
   </component>

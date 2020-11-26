@@ -1,15 +1,38 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-    {# sur ma base dans le body le block main me permettra de rappeler les elements de mes autres pages  #}
+<!DOCTYPE html>
+<html>
+<head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>{% block title %}{% endblock %}</title>
-
-    </head>
-    <body>
-
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+</head>
+<body>
+<header>
+    <div class ="row">
+        <div class="img">
+            {# la fonction asset permet de recuperer dans un autre dossier son contenu ici dossier img  #}
+            <img src="{{ asset('assets/img/book.svg') }}" alt="logo" class="resp"/>
+        </div>
+        <nav>
+            <ul>
+                {# path sert a redefinir une route pour les liens {{ path("articleShow") }} #}
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">lien1</a></li>
+                <li><a href="#">lien2</a></li>
+                <li><a href="#">lien3</a></li>
+            </ul>
+        </nav>
+    </div>
+    {# les blocks  permettent  de rappeler le contenu d'un autre ficher twig dans une partie d'un autre fichier  #}
+    {% block message %}{% endblock message %}
     {% block main %}{% endblock main%}
-
-    </body>
-    </html>
+</header>
+<footer>
+    <div class="row">
+        <div class="image">
+            {# la fonction asset permet de recuperer dans un autre dossier son contenu ici dossier img  #}
+            <img src="{{ asset('assets/img/book.svg') }}" alt="logo" class="resp"/>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+{# le fichier base contient ma structure html qui servira pour les autres fichier  #}
