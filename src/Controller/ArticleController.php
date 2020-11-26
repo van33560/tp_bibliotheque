@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -125,10 +126,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 */
 
     //je crée une methode pour créer un formulaire avec la methode insertArticle
-    public function insertArticle()
-    {
+    public function insertArticle(Request $request, EntityManagerInterface $entityManager)
+    {   //j' indique a sf que je crée un nouvelle objet
+        $article = new Article();
+
         //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
-        $form = $this->createForm(ArticleType::class);
+        $form = $this->createForm(ArticleType::class, $article);
+        //avec la methode handle je recupere les données en post
+        $form->handleRequest($request);
+
+
+        //je fait une contidion si mon forulaire et envoyer et valide alors je pré-sauvegarde
+        //avec la fonction persist et j'insere avec la fonction flush
+        if($form->isSubmitted() && $form->isValid()){
+
+            $entityManager->pesist($article);
+            $entityManager->flush();
+    }
         //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
         $formView = $form-> createView();
        //la fonction render me permet d'envoyer a twig les infos qui seront afficher

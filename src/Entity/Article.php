@@ -139,7 +139,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getPublished()
+    public function getIsPublished()
     {
         return $this->isPublished;
     }
@@ -147,7 +147,7 @@ class Article
     /**
      * @param mixed $isPublished
      */
-    public function setPublished($isPublished): void
+    public function setIsPublished($isPublished): void
     {
         $this->isPublished = $isPublished;
     }
