@@ -16,20 +16,20 @@ class AdminArticleController extends AbstractController
 
 
     /**
-     * @Route("/articles", name="articlelist")
+     * @Route("admin/article/articles", name="admin_articlelist")
      */
     //ma methode acticle repository me permet de recuperer via la bdd les données et de les afficher avec return render
     public function ArticleList(ArticleRepository $articleRepository)
     {
         $articles = $articleRepository->findAll();
 
-        return $this->render("articles.html.twig",[
+        return $this->render("article/admin/articles.html.twig",[
             'articles' => $articles
         ]);
 
     }
     /**
-     * @route("/article/insert",name="article_insert")
+     * @route("admin/article/insert",name="admin_article_insert")
      */
 
     //je crée une methode pour créer un formulaire avec la methode insertArticle
@@ -54,17 +54,17 @@ class AdminArticleController extends AbstractController
                 "sucess",
                 "l'article a ete ajouté"
             );
-            return $this->redirectToRoute('articlelist');
+            return $this->redirectToRoute('admin_articlelist');
         }
         //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
         $formView = $form-> createView();
         //la fonction render me permet d'envoyer a twig les infos qui seront affichés
-        return $this->render('insert.html.twig',[
+        return $this->render('article/admin/insert.html.twig',[
             'formView' => $formView
         ]);
     }
     /**
-     * @route("/article/update/{id}",name="article_update")
+     * @route("admin/article/update/{id}",name="admin_article_update")
      */
     //je crée une methode updateArticle pour modifier le contenu du formulaire je lui passe en parametre id pour pouvoir
     //  modifier un article grace a son id,la prropriété repository me permettra de modifier les données de la bdd et
@@ -75,7 +75,7 @@ class AdminArticleController extends AbstractController
         $article = $articleRepository -> find($id);
 
         if(is_null($article)){
-            return $this->redirectToRoute('articlelist');
+            return $this->redirectToRoute('admin_articlelist');
         }
         //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
         $form = $this -> createForm(ArticleType::class,$article);
@@ -98,12 +98,12 @@ class AdminArticleController extends AbstractController
         //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
         $formView = $form-> createView();
         //la fonction render me permet d'envoyer a twig les infos qui seront affichés
-        return $this->render('update_article.html.twig',[
+        return $this->render('admin/update_article.html.twig',[
             'formView' => $formView
         ]);
     }
     /**
-     * @route("/article/delete/{id}",name="article_delete")
+     * @route("admin/article/delete/{id}",name="admin_article_delete")
      */
     //je crée une methode deletearticle qui aura pour paramétres $id(me permettra de recuperer l'article),articlerepository(qui me permettra de récuperer
     //les données de la base de données, sf effectuera la requete delete) et entityManagerinterface,
@@ -127,7 +127,7 @@ class AdminArticleController extends AbstractController
 
         }
         // la fonction redirecttoroute permet de retrouner un visuel via le name de mon fichier 'articlelist'
-        return $this->redirectToRoute('articlelist');
+        return $this->redirectToRoute('admin_articlelist');
 
     }
 

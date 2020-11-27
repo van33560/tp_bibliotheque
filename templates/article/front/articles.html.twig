@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends "../../base.html.twig" %}
 
 
 
@@ -10,11 +10,7 @@
     {% endfor %}
 
 {% endblock message%}
-
-{% block header %}
-    <div class="creer"></div><a href="{{ path('article_insert') }}">créer un article</a>
-{% endblock %}
-
+<button><a href="{{ path('admin_article_insert') }}">créer un article</a></button>
 {% block main %}
 <hr><h1>Bienvenue dans ma bibliothéque</h1>
 <div class="container">
@@ -30,9 +26,7 @@
          <div class="content">
              <img src="{{ article.image }}" alt="" class="resp">
             <p id="test">{{ article.content }}</p>
-             <button class="button"><a href="{{ path('article_delete', {'id':article.id}) }}">supprimer</a></button>
-             <button class="button"><a href="{{ path('article_update', {'id':article.id}) }}">modifier</a></button>
-       </div>
+         </div>
     </article>
 {% endfor %}
 </div><hr>
