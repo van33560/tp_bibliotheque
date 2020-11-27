@@ -5,7 +5,45 @@
     {%  for message in app.flashes ('success') %}
         <p>{{ message }}</p>
     {% endfor %}
-<div id="form">
-    {{ form(formView) }}
+<h1>Créer votre article</h1>
+{# je crée un formulaire avec  form_start grace a cette fonction je vais pouvoir demander à sf  de
+ generer un cabarit que je pourrai styliser avec bootstrap en placant chaque elements dans des div,
+ #}
+<form class="form">
+    {{ form_start(formView) }}
+{# avec la fonction form_label je crée un label title  #}
+ <div class="form-group col-md-2"id="article_title">
+     {{ form_label(formView.title) }}
+{# avec la fonction form_widget je crée un input  #}
+    {{ form_widget(formView.title,{ 'attr':{'class':'article_form_title'}}) }}
 </div>
+<div class="form-group col-md-2"id="article_content">
+     {{ form_label(formView.content) }}
+     {{ form_widget(formView.content) }}
+</div>
+
+<div class="form-group col-md-2"id="article_image">
+    {{ form_label(formView.image) }}
+     {{ form_widget(formView.image) }}
+</div>
+
+    <div class="form-group col-md-2"id="pubdate">
+     {{ form_label(formView.publicationDate) }}
+     {{ form_widget(formView.publicationDate) }}
+ </div>
+<div class="form-group col-md-2"id=creatdate">
+     {{ form_label(formView.creationDate) }}
+     {{ form_widget(formView.creationDate) }}
+</div>
+<div class="form-group col-md-2"id="ispub">
+     {{ form_label(formView.isPublished) }}
+     {{ form_widget(formView.isPublished) }}
+</div>
+<div class="form-group col-md-2"id="val">
+        {{ form_label(formView.valider) }}
+        {{ form_widget(formView.valider) }}
+    </div>
+{# form_end ferme mon formulaire #}
+    {{ form_end(formView) }}
+</form>
 {% endblock header%}

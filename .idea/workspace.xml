@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7d90ea9-f749-43e0-9a32-050640fb3369" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/article/admin/article.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article/admin/articles.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/admin/category.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/admin/delete_category.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/admin/update_category.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/front/category.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/front/categorys.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/front/article.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/front/articles.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/delete_article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/delete_article.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/insert.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insert_static.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/modify_static.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/modify_static.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/update_article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/update_article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/insert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/insert.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/categorys.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category_insert_static.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +142,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/article/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/article/front" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,11 +154,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/article/front" />
       <recent name="$PROJECT_DIR$/templates/article/admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/article/front" />
       <recent name="$PROJECT_DIR$/templates/article/admin" />
+      <recent name="$PROJECT_DIR$/templates/article/front" />
       <recent name="$PROJECT_DIR$/public/asset/css" />
     </key>
   </component>
@@ -178,7 +180,7 @@
       <workItem from="1606335543364" duration="1367000" />
       <workItem from="1606379010219" duration="13795000" />
       <workItem from="1606418170392" duration="6261000" />
-      <workItem from="1606464739843" duration="9354000" />
+      <workItem from="1606464739843" duration="19144000" />
     </task>
     <servers />
   </component>
@@ -186,10 +188,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="475" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606468755586">
+    <state x="475" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606475912302">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="475" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1606468755586" />
+    <state x="475" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1606475912302" />
     <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1606234883788">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -198,14 +200,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="566" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1606226668775" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606465648111">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606482372569">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606465648111" />
-    <state x="453" y="183" key="NewPhpClassDialog" timestamp="1606211121447">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606482372569" />
+    <state x="453" y="183" key="NewPhpClassDialog" timestamp="1606476181110">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="453" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1606211121447" />
+    <state x="453" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1606476181110" />
     <state x="229" y="89" key="SettingsEditor" timestamp="1606295055830">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

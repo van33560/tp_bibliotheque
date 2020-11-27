@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Category;
+use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,47 +17,37 @@ class CategoryController extends AbstractController
 {
 
 /**
-* @Route ("/category" ,name="category")
+* @Route ("/categorys" ,name="categorylist")
 */
     //categorylist est ne nom de ma methode categoryrepository va me permettre de recuperer le contenu de ma base de données
      public function categoryList(CategoryRepository $categoryRepository)
-{
+     {
 
-    //findall est une propriete de symfony et va me permettre de recuperer toutes les données
-     $category = $categoryRepository->findAll();
-     return $this->render('category.html.twig', [
-    "category" => $category
+         //findall est une propriete de symfony et va me permettre de recuperer toutes les données
+         $categorys = $categoryRepository->findAll();
+         return $this->render('categorys.html.twig', [
+             "categorys" => $categorys
 
 
-]);
+         ]);
+     }
 
-    }
-     //je cree une nouvelle route pour pouvoir rentrer des données static (nouvelle donnée)une methode public insertStatic en parametre entityManagerinterface qui va me permettre de faire les requetes insert,update, delete
+    // chemin de ma route qui renvoi au contenu d'une de mes categories via son id
     /**
-     * @route("/category/insert-static",name="category_insert_static")
+     * @route("/category/show/{id}",name="categoryShow")
      */
-        //inserer un article dans la BDD
-        public function insertStaticCategory(EntityManagerInterface $entityManager1)
-        //la class entitymanager permet de creer les champs de ma table ne pas reporter interface a ma variable
-    {
-      //j'utilise les proprietes de ma class entité nouvelle objet via new pour creer des nouveaux champs
-        //la class =structure new =entité symfony instancie
-        $category = new Category();
+    // ma methode articlerepository me permet de recuperer les données de ma bdd et de retourner un resultat via la propriete render
+    public function categoryShow($id, ArticleRepository $articleRepository)
+{
+    $category = $articleRepository->find($id);
 
-        $category->setTitle("Titre de mon article");
-        $category->setColor(" green");
-        $category->setDate(new \DateTime());
-        $category->setCreated(new \DateTime());
-        $category->setPublished(true);
+    return $this->render("front/category.html.twig", [
+        'category' => $category
+    ]);
 
-        //j'insere mes données statiques dans ma table article de ma BDD persist et une methode qui va pres sauvegarder une entree dans la table catégorie
-        $entityManager1->persist($category);
-        //va permettre d'inseer les champs dans la base de données
-        $entityManager1->flush();
 
-        // la fonction render permet de recuperer et d'afficher un resultat en html via category_insert_static.html.twig
-        return $this->render('category_insert_static.html.twig');
-    }
+
+}
 
 
 
