@@ -11,9 +11,14 @@
 
 {% endblock message%}
 
+{% block header %}
+    <div class="creer"></div><a href="{{ path('article_insert') }}">créer un article</a>
+{% endblock %}
+
 {% block main %}
-   <hr><h1>Bienvenue dans ma bibliothéque</h1>
+<hr><h1>Bienvenue dans ma bibliothéque</h1>
 <div class="container">
+{# lien pour creer un article avec la propriété path #}
 {% for article in articles %}
 {# avec la boucle for j'appel un article dans mes articles avec clipable avec le lien a href  #}
 {# avec la propriete path j'appel un de mes articles qui sera clipable et qui affichera le contenu
@@ -26,11 +31,9 @@
              <img src="{{ article.image }}" alt="" class="resp">
             <p id="test">{{ article.content }}</p>
              <button class="button"><a href="{{ path('article_delete', {'id':article.id}) }}">supprimer</a></button>
-             <button class="button"><a href="{{ path('articlelist', {'id':article.id}) }}">modifier</a></button>
+             <button class="button"><a href="{{ path('article_update', {'id':article.id}) }}">modifier</a></button>
        </div>
     </article>
-
-
 {% endfor %}
 </div><hr>
 {% endblock main%}

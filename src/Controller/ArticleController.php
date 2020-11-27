@@ -7,6 +7,8 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use http\Message;
+use phpDocumentor\Reflection\Type;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
@@ -126,30 +128,75 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 */
 
     //je crée une methode pour créer un formulaire avec la methode insertArticle
-    public function insertArticle(Request $request, EntityManagerInterface $entityManager)
-    {   //j' indique a sf que je crée un nouvelle objet
-        $article = new Article();
+public function insertArticle(Request $request, EntityManagerInterface $entityManager)
+{   //j' indique a sf que je crée un nouvelle objet
+    $article = new Article();
 
-        //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
-        $form = $this->createForm(ArticleType::class, $article);
-        //avec la methode handle je recupere les données en post
-        $form->handleRequest($request);
+    //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
+    $form = $this->createForm(ArticleType::class, $article);
+    //avec la methode handle de la class form je récupère les données en post
+    $form->handleRequest($request);
 
 
-        //je fait une contidion si mon forulaire et envoyer et valide alors je pré-sauvegarde
-        //avec la fonction persist et j'insere avec la fonction flush
-        if($form->isSubmitted() && $form->isValid()){
+    //je fait une contidion si mon formulaire et envoyer et valide alors je pré-sauvegarde
+    //avec la fonction persist et j'insere avec la fonction flush
+    if($form->isSubmitted() && $form->isValid()){
 
-            $entityManager->pesist($article);
-            $entityManager->flush();
+      $entityManager->persist($article);
+      $entityManager->flush();
+
+        $this->addFlash(
+            "sucess",
+            "l'article a ete ajouté"
+        );
+        return $this->redirectToRoute('articlelist');
+     }
+    //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
+    $formView = $form-> createView();
+    //la fonction render me permet d'envoyer a twig les infos qui seront affichés
+     return $this->render('insert.html.twig',[
+    'formView' => $formView
+     ]);
+}
+ /**
+ * @route("/article/update/{id}",name="article_update")
+*/
+     //je crée une methode updateArticle pour modifier le contenu du formulaire je lui passe en parametre id pour pouvoir
+     //  modifier un article grace a son id,la prropriété repository me permettra de modifier les données de la bdd et
+    // la propriéte request me permettra de recuperer les modification
+public function updateArticle($id, ArticleRepository $articleRepository,Request $request, EntityManagerInterface $entityManager)
+{
+    //je récupére en bdd  l'id wild card qui correspond a celui renseigner dans url
+    $article = $articleRepository -> find($id);
+
+    if(is_null($article)){
+        return $this->redirectToRoute('articlelist');
     }
-        //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
-        $formView = $form-> createView();
-       //la fonction render me permet d'envoyer a twig les infos qui seront afficher
-        return $this->render('insert.html.twig',[
-            'formView' => $formView
-        ]);
-  }
- }
+    //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
+    $form = $this -> createForm(ArticleType::class,$article);
+
+    //avec la methode handle de la class form je récupère les données en post
+    $form->handleRequest($request);
+    //je fait une contidion si mon formulaire et envoyer et valide alors je pré-sauvegarde
+    //avec la fonction persist et j'insere avec la fonction flush
+    if($form->isSubmitted() && $form->isValid()){
+        $entityManager->persist($article);
+        $entityManager->flush();
+
+        //j'ajoute un message de type flash qui s'affichera  la modification  de l'article
+        $this->addFlash(
+           "sucess",
+            "l'article a été modifié"
+        );
+
+    }
+    //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
+    $formView = $form-> createView();
+    //la fonction render me permet d'envoyer a twig les infos qui seront affichés
+    return $this->render('update_article.html.twig',[
+        'formView' => $formView
+    ]);
+}
+}
 
 
