@@ -79,7 +79,7 @@ class Article
 
     /**
      * grace a la ligne de commande bin/console make:entity j'ai ajouté une propriete a mon entité
-     * celle ci crée une relation vers ma table category inverseBy pointe vers ma category
+     * celle ci crée une relation vers ma table category inverseBy pointe vers ma category target entite ciblée
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="articles")
      */
     private $Category;

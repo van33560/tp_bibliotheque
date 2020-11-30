@@ -4,9 +4,8 @@
     <list default="true" id="c7d90ea9-f749-43e0-9a32-050640fb3369" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/admin/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/articles.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/front/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/front/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/insert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/insert.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,7 @@
       <workItem from="1606570903844" duration="24702000" />
       <workItem from="1606649486545" duration="789000" />
       <workItem from="1606661871506" duration="2416000" />
-      <workItem from="1606725320115" duration="11023000" />
+      <workItem from="1606725320115" duration="13643000" />
     </task>
     <servers />
   </component>

@@ -4,6 +4,9 @@ namespace App\Form;
 
 use App\Entity\Article;
 
+use App\Entity\Category;
+use phpDocumentor\Reflection\Type;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -24,6 +27,13 @@ class ArticleType extends AbstractType
             ->add('creationDate',DateType::class,[
                 'widget'=>'single_text'])
             ->add('isPublished')
+            //dans mon gabarit de formulaire de gréer l'input categorie qui est relié a ma propriete category
+            //dans l'entité article et je lui donne un type entité
+            ->add('Category',EntityType::class,[
+              //ici je precice quelle entite sera afficher dans l'input (title)que l'utilisateur pourra choisir
+              'class'=> Category::class,
+              'choice_label'=>'title'
+            ])
             ->add('valider', SubmitType::class)
         ;
     }
