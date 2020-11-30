@@ -52,7 +52,7 @@ class Article
      */
     private $content;
 
-    //assert file permet de pre-typer de format d'image//
+
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -61,7 +61,7 @@ class Article
     /**
      * @ORM\Column(type="datetime", nullable=true)
      * @Assert\DateTime
-     * @var 'string' A "Y-m-d H:i:s" formatted value
+     * @var string A "Y-m-d H:i:s" formatted value
      */
 
 
@@ -76,6 +76,13 @@ class Article
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $isPublished;
+
+    /**
+     * grace a la ligne de commande bin/console make:entity j'ai ajouté une propriete a mon entité
+     * celle ci crée une relation vers ma table category inverseBy pointe vers ma category
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="articles")
+     */
+    private $Category;
 
     /**
      * @return mixed
@@ -180,6 +187,18 @@ class Article
     public function setIsPublished($isPublished): void
     {
         $this->isPublished = $isPublished;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(?Category $Category): self
+    {
+        $this->Category = $Category;
+
+        return $this;
     }
 
 

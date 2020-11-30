@@ -27,6 +27,7 @@
          <div class="content">
              <img src="{{ article.image }}" alt="" class="resp">
             <p id="test">{{ article.content }}</p>
+             <p>{{ article.category.title }}</p>
              <button class="button"><a href="{{ path('admin_article_delete', {'id':article.id}) }}">supprimer</a></button>
              <button class="button"><a href="{{ path('admin_article_update', {'id':article.id}) }}">modifier</a></button>
        </div>

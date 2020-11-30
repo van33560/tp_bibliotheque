@@ -3,6 +3,8 @@
 
 namespace App\Entity;
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -22,7 +24,7 @@ class Category
 
 
     /**
-     * @@ORM\Column(type="string")
+     * @ORM\Column(type="string")
      * @Assert\Length(
      *     min= 4,
      *     max=50,
@@ -55,6 +57,19 @@ class Category
      * @ORM\Column(type="boolean", name="published")
      */
     private $published;
+
+    /**
+     * la mappedBy et la relation inverse vers les articles
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="Category")
+     */
+    private $articles;
+
+
+    //la methode construct est appelée a chaque instantiation de nouvel objet ici un tableau ArrayCollection
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -118,6 +133,37 @@ class Category
     public function setPublished(bool $published): self
     {
         $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    //methode collection recupere  le contenu de l'array qui contient les articles
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+    // la methode add article va permettre de rajouter des articles sans les supprimer
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setCategory($this);
+        }
+
+        return $this;
+    }
+    //cette methode permet de supprimer un article sans supprimer les autres
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->removeElement($article)) {
+            // set the owning side to null (unless already changed)
+            if ($article->getCategory() === $this) {
+                $article->setCategory(null);
+            }
+        }
 
         return $this;
     }
