@@ -1,18 +1,19 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
 
 
 {% block message %}
 {# je mets mon message dans un block message, qui  est redefini dan mon fichier twig#}
-{#  si mon message est supprimé j'affiche mon message grace a la variable globale app sur l page principale#}
+{#  si mon message est supprimé j'affiche mon message grace a la variable globale app sur la page principale#}
     {%  for message in app.flashes ('success') %}
     <p>{{ message }}</p>
     {% endfor %}
+    <button class="but"><a href="{{ path('admin_article_insert') }}">créer un article</a></button>
 {% endblock message%}
 
 {% block main %}
 <hr><h1>Bienvenue dans ma bibliothéque</h1>
-<button class="but"><a href="{{ path('admin_article_insert') }}">créer un article</a></button>
+
 <div class="container">
 {# lien pour creer un article avec la propriété path #}
 {% for article in articles %}
@@ -22,7 +23,7 @@
 {# avec la proprieté path je recupére un titre de mes articles et son id, grace au name de ma route articles #}
 {# j'appel mes images et mes titres  #}
     <article class="article">
-        <h2>{{ article.title }}</h2>
+        <h2 class="titre">{{ article.title }}</h2>
          <div class="content">
              <img src="{{ article.image }}" alt="" class="resp">
             <p id="test">{{ article.content }}</p>

@@ -5,9 +5,12 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ArticleRepository::class)
- */
+use Symfony\Component\Validator\Constraints as Assert;
+   //la class contraints as Assert permet de mettre des contraintes sur les entités
+
+   /**
+    * @ORM\Entity(repositoryClass=ArticleRepository::class)
+    */
 class Article
 {
     /**
@@ -17,16 +20,39 @@ class Article
      */
     private $id;
 
+    // assert est l'alias de contrainte est permet ici avec la classe not\blank pour afficher un message d'erreur si le champn'est pas rempli
+    //asset lenght permet de determiner une nombre de caractere minimum et maximum sinon le message d'affiche
+
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     *     message="Merci de remplir le titre"
+     * )
+     * @Assert\Length(
+     *     min= 4,
+     *     max=10,
+     *     minMessage="trop peu de lettres!",
+     *     maxMessage="trop de lettres!!"
+     * )
+     *
      */
     private $title;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text", length=255)
+     * @Assert\NotBlank(
+     *     message="Merci de remplir le contenu"
+     * )
+     * @Assert\Length (
+     *     min= 200,
+     *     max= 500,
+     *     minMessage= "veuillez ecrire au minimum 200 caractéres",
+     *     maxMessage= "Vous avez depasser les caractéres maximum autorisés"
+     * )
      */
     private $content;
 
+    //assert file permet de pre-typer de format d'image//
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -34,7 +60,11 @@ class Article
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Assert\DateTime
+     * @var 'string' A "Y-m-d H:i:s" formatted value
      */
+
+
     private $publicationDate;
 
     /**

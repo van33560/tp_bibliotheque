@@ -2,20 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7d90ea9-f749-43e0-9a32-050640fb3369" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article/admin/category.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article/admin/delete_category.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article/admin/update_category.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article/front/category.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article/front/categorys.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CategoryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/category.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/categorys.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/delete_category.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/article/admin/insert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/insert.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/modify_static.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/modify_static.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/update_article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/update_article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/admin/update_category.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/front/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/front/article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/front/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/front/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/front/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/front/category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/front/categorys.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/front/categorys.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/categorys.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category_insert_static.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +150,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/article/front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,14 +161,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/article/front" />
-      <recent name="$PROJECT_DIR$/templates/article/admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/article/category/admin" />
       <recent name="$PROJECT_DIR$/templates/article/admin" />
       <recent name="$PROJECT_DIR$/templates/article/front" />
       <recent name="$PROJECT_DIR$/public/asset/css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/article/front" />
+      <recent name="$PROJECT_DIR$/templates/article/admin" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -180,7 +189,11 @@
       <workItem from="1606335543364" duration="1367000" />
       <workItem from="1606379010219" duration="13795000" />
       <workItem from="1606418170392" duration="6261000" />
-      <workItem from="1606464739843" duration="19144000" />
+      <workItem from="1606464739843" duration="19737000" />
+      <workItem from="1606570903844" duration="24702000" />
+      <workItem from="1606649486545" duration="789000" />
+      <workItem from="1606661871506" duration="2416000" />
+      <workItem from="1606725320115" duration="6398000" />
     </task>
     <servers />
   </component>
@@ -200,10 +213,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="566" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1606226668775" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606482372569">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606579360227">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606482372569" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606579360227" />
     <state x="453" y="183" key="NewPhpClassDialog" timestamp="1606476181110">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -212,10 +225,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1606295055830" />
-    <state x="427" y="176" width="586" height="548" key="find.popup" timestamp="1606473866551">
+    <state x="427" y="176" width="586" height="548" key="find.popup" timestamp="1606581933004">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="427" y="176" width="586" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606473866551" />
+    <state x="427" y="176" width="586" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606581933004" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606236221306">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -1,16 +1,34 @@
-    {% extends '../../base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-    {% block title %}
-    {% endblock %}
-
-    {% block main %}
-    <h1>Mes  categories</h1>
-    {# je rappel le contenu de mes categories j'affiche un titre avec une couleur#}
-    {% for category in categorys %}
-
-    <h1>{{ category.title }}</h1>
-    <h2 style="color: {{ category.color }}"></h2>
-    <h4>{{ category.color }}</h4>
+{% block message %}
+    {# je mets mon message dans un block message, qui  est redefini dan mon fichier twig#}
+    {#  si mon message est supprimé j'affiche mon message grace a la variable globale app sur l page principale#}
+    {%  for message in app.flashes ('success') %}
+        <p>{{ message }}</p>
     {% endfor %}
+{% endblock message%}
 
-    {% endblock %}
+{% block main %}
+    <div class="container" >
+    <button class="but"><a href="{{ path('admin_insert_category') }}">créer votre categorie</a></button>
+    <h1>Mes  categories</h1>
+{# je rappel le contenu de mes categories j'affiche un titre avec une couleur#}
+{% for category in categorys %}
+    <h2>{{ category.title }}</h2>
+    <h3 style="color: {{ category.color }}"></h3>
+    <h4>{{ category.color }}</h4>
+    {# je fais le lien vers la page category  #}
+    <a href="{{ path('categoryShow', {'id': category.id}) }}"><p>{{ category.title }}</p></a>
+{# j'affiche la date de création et publiée en ajoutant le filtre qui affiche correctmt la date  #}
+    <p>{{ category.createdDate|date("m/d/Y") }}</p>
+    <p>{{ category.publishedDate|date("m/d/Y") }}</p>
+    <br /><br />
+    <a href="{{ path('admin_update_category', {'id': category.id}) }}">
+    <div>> modifier  catégorie</div></a><br />
+    {#  Je créer le lien qui va supprimer la category de la liste via son id #}
+    <a href="{{ path('admin_delete_category', {'id': category.id}) }}">
+    <div>> supprimer cette catégorie</div></a><br/>
+    </div>
+{% endfor %}
+
+{% endblock main%}

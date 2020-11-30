@@ -1,6 +1,4 @@
-{% extends "../../base.html.twig" %}
-
-
+{% extends 'base.html.twig' %}
 
 {% block message %}
 {# je mets mon message dans un block message, qui  est redefini dan mon fichier twig#}
@@ -8,7 +6,6 @@
     {%  for message in app.flashes ('success') %}
     <p>{{ message }}</p>
     {% endfor %}
-
 {% endblock message%}
 <button><a href="{{ path('admin_article_insert') }}">créer un article</a></button>
 {% block main %}

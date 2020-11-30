@@ -22,7 +22,7 @@ class AdminCategoryController extends AbstractController
     {
         $categorys = $categoryRepository->findAll();
 
-        return $this->render("article/admin/categorys.html.twig",[
+        return $this->render("category/admin/categorys.html.twig",[
             'categorys' => $categorys
         ]);
 
@@ -37,7 +37,7 @@ class AdminCategoryController extends AbstractController
         $category = new Category();
 
         //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
-        $form = $this->createForm(ArticleType::class, $category);
+        $form = $this->createForm(CategoryType::class, $category);
         //avec la methode handle de la class form je récupère les données en post
         $form->handleRequest($request);
 
@@ -58,7 +58,7 @@ class AdminCategoryController extends AbstractController
         //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
         $formView = $form-> createView();
         //la fonction render me permet d'envoyer a twig les infos qui seront affichés
-        return $this->render('article/admin/insert.html.twig',[
+        return $this->render('category/admin/insert_category.html.twig',[
             'formView' => $formView
         ]);
     }
@@ -77,7 +77,7 @@ class AdminCategoryController extends AbstractController
             return $this->redirectToRoute('admin_categorylist');
         }
         //je crée un formulaire grâce à la fonction createFrom et je passe en paramétre le chemin vers le fichierArticleType
-        $form = $this -> createForm(ArticleType::class,$category);
+        $form = $this -> createForm(CategoryType::class,$category);
 
         //avec la methode handle de la class form je récupère les données en post
         $form->handleRequest($request);
@@ -97,7 +97,7 @@ class AdminCategoryController extends AbstractController
         //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
         $formView = $form-> createView();
         //la fonction render me permet d'envoyer a twig les infos qui seront affichés
-        return $this->render('admin/update_category.html.twig',[
+        return $this->render('category/admin/update_category.html.twig',[
             'formView' => $formView
         ]);
     }

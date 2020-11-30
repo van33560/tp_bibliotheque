@@ -2,12 +2,13 @@
 
 
 namespace App\Entity;
-use App\Repository\ArticleRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-    /**
-     *@ORM\Entity(repositoryClass=CategoryRepository::class)
-     */
+/**
+ * @ORM\Entity(repositoryClass=CategoryRepository::class)
+ */
 // je creer les entitées de ma table
 class Category
 {
@@ -22,6 +23,12 @@ class Category
 
     /**
      * @@ORM\Column(type="string")
+     * @Assert\Length(
+     *     min= 4,
+     *     max=50,
+     *     minMessage="trop peu de lettres!",
+     *     maxMessage="trop de lettres!!"
+     * )
      *
      */
     private $title;
@@ -35,19 +42,27 @@ class Category
 
      /**
      * @ORM\Column(type="date", name="date_publication")
+      *
      */
      private $date;
 
     /**
-     * @ORM\Column(type="datetime", name="created")
+     * @ORM\Column(type="datetime", name="created_date")
      */
-    private $created;
+    private $createdDate;
 
     /**
      * @ORM\Column(type="boolean", name="published")
      */
     private $published;
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
      public function getTitle(): ?string
      {
@@ -83,14 +98,14 @@ class Category
         return $this;
     }
 
-    public function getCreated(): ?\DateTimeInterface
+    public function getCreatedDate(): ?\DateTimeInterface
     {
-        return $this->created;
+        return $this->createdDate;
     }
 
-    public function setCreated(\DateTimeInterface $created): self
+    public function setCreatedDate(\DateTimeInterface $createdDate): self
     {
-        $this->created = $created;
+        $this->createdDate = $createdDate;
 
         return $this;
     }

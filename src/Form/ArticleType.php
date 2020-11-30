@@ -18,7 +18,7 @@ class ArticleType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('image')
-            //dataType permet de generer un format pres defini de dates
+            //dataType permet de generer un format pre-defini de dates
             ->add('publicationDate', DateType::class,[
                 'widget'=>'single_text'])
             ->add('creationDate',DateType::class,[
