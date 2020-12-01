@@ -21,11 +21,19 @@
     <article class="article">
         <h2>{{ article.title }}</h2>
          <div class="content">
-             <img src="{{ article.image }}" alt="" class="resp">
+             <img src="{{ article.imageFileName }}" alt="" class="resp">
             <p id="test">{{ article.content }}</p>
              <p>{{ article.category.title }}</p>
          </div>
     </article>
+    {% if article.imageFileName %}
+        {#
+        je récupère le nom du fichier uploadé
+        que je concatène avec le dossier
+        dans le dossier uploadé
+        #}
+        <img src="{{ asset('uploads/articles/' ~ article.imageFileName) }}" alt="">
+    {% endif %}
 {% endfor %}
 </div><hr>
 {% endblock main%}

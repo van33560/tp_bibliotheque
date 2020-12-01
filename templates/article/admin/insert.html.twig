@@ -27,12 +27,12 @@
         {{ form_errors(formView.content) }}
      </div>
 
-     <div class="form-group col-md-2"id="article_image">
-        {{ form_label(formView.image) }}
-        {{ form_widget(formView.image,{ 'attr':{'class':'article_form_image'}}) }}
-        {# avec le fonction form_errer me permet d'afficher les message d'erreur que j'ai definis dans les entités#}
-        {{ form_errors(formView.image) }}
-     </div>
+
+    <div class="file">
+        {{ form_label(formView.imageFileName) }}
+        {{ form_widget(formView.imageFileName, {'attr': {'class': 'article_form_imageFileName'}}) }}
+        {{ form_errors(formView.imageFileName) }}
+    </div>
 
      <div class="form-group col-md-2"id="pubdate">
          {{ form_label(formView.publicationDate) }}

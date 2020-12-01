@@ -30,7 +30,7 @@ class Article
      * )
      * @Assert\Length(
      *     min= 4,
-     *     max=10,
+     *     max=80,
      *     minMessage="trop peu de lettres!",
      *     maxMessage="trop de lettres!!"
      * )
@@ -44,8 +44,8 @@ class Article
      *     message="Merci de remplir le contenu"
      * )
      * @Assert\Length (
-     *     min= 200,
-     *     max= 500,
+     *     min= 20,
+     *     max= 50,
      *     minMessage= "veuillez ecrire au minimum 200 caractéres",
      *     maxMessage= "Vous avez depasser les caractéres maximum autorisés"
      * )
@@ -54,14 +54,13 @@ class Article
 
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string",  nullable=true)
      */
-    private $image;
+    private $imageFileName;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
-     * @Assert\DateTime
-     * @var string A "Y-m-d H:i:s" formatted value
+     *
      */
 
 
@@ -125,20 +124,22 @@ class Article
         $this->content = $content;
     }
 
+
+
     /**
      * @return mixed
      */
-    public function getImage()
+    public function getImageFileName()
     {
-        return $this->image;
+        return $this->imageFileName;
     }
 
     /**
-     * @param mixed $image
+     * @param mixed $imageFileName
      */
-    public function setImage($image): void
+    public function setImageFileName($imageFileName): void
     {
-        $this->image = $image;
+        $this->imageFileName = $imageFileName;
     }
 
     /**
