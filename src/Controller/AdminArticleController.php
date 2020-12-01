@@ -98,7 +98,7 @@ class AdminArticleController extends AbstractController
         //je crée grâce à la fonction createview une vue qui pourra  en suite être lu par twig
         $formView = $form-> createView();
         //la fonction render me permet d'envoyer a twig les infos qui seront affichés
-        return $this->render('admin/update_article.html.twig',[
+        return $this->render('article/admin/update_article.html.twig',[
             'formView' => $formView
         ]);
     }

@@ -65,7 +65,7 @@ class Category
     private $articles;
 
 
-    //la methode construct est appelée a chaque instantiation de nouvel objet ici un tableau ArrayCollection
+    //la methode construct est appelée a chaque instantiation de nouvel category,objet ici un tableau ArrayCollection
     public function __construct()
     {
         $this->articles = new ArrayCollection();

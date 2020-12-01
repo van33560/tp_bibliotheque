@@ -9,38 +9,40 @@
     {# je crée un formulaire avec  form_start grace a cette fonction je vais pouvoir demander à sf  de
  generer un cabarit que je pourrai styliser avec bootstrap en placant chaque elements dans des div,
     #}
-<form class="form">
-    {{ form_start(formView) }}
-    {# avec la fonction form_label je crée un label title  #}
-<div class="form-group col-md-2">
-    {{ form_label(formView.title) }}
-    {# avec la fonction form_widget je crée un input  #}
-    {{ form_widget(formView.title,{ 'attr':{'class':'article_form_title'}}) }}
-    {{ form_errors(formView.title) }}
-</div>
-<div class="form-group col-md-2">
-    {{ form_label(formView.color) }}
-    {{ form_widget(formView.color,{ 'attr':{'class':'article_form_color'}}) }}
-</div>
 
-<div class="form-group col-md-2">
-    {{ form_label(formView.date) }}
-    {{ form_widget(formView.date,{ 'attr':{'class':'article_form_date'}}) }}
+ {{ form_start(formView) }}
+    <div class="form-group col-md-2 mt-5">
+        {{ form_label(formView.title) }}
+        {{ form_widget(formView.title,{ 'attr':{'class':'article_form_title'}}) }}
+        {{ form_errors(formView.title) }}
+    </div>
 
-</div>
-<div class="form-group col-md-2">
-    {{ form_label(formView.createdDate) }}
-    {{ form_widget(formView.createdDate,{ 'attr':{'class':'article_form_createddate'}}) }}
-</div>
-<div class="form-group col-md-2">
-    {{ form_label(formView.published) }}
-    {{ form_widget(formView.published,{ 'attr':{'class':'article_form_published'}}) }}
-</div>
-<div class="form-group col-md-2">
-    {{ form_label(formView.valider) }}
-    {{ form_widget(formView.valider,{ 'attr':{'class':'article_form_valider'}}) }}
-</div>
-{# form_end ferme mon formulaire #}
+    <div class="form-group col-md-2">
+        {{ form_label(formView.color) }}
+        {{ form_widget(formView.color,{ 'attr':{'class':'article_form_color'}}) }}
+    </div>
+
+    <div class="form-group col-md-2">
+        {{ form_label(formView.date) }}
+        {{ form_widget(formView.date,{ 'attr':{'class':'article_form_date'}}) }}
+
+    </div>
+
+    <div class="form-group col-md-2">
+         {{ form_label(formView.createdDate) }}
+         {{ form_widget(formView.createdDate,{ 'attr':{'class':'article_form_createddate'}}) }}
+    </div>
+
+    <div class="form-group col-md-2">
+        {{ form_label(formView.published) }}
+        {{ form_widget(formView.published,{ 'attr':{'class':'article_form_published'}}) }}
+    </div>
+
+    <div class="form-group col-md-2">
+        {{ form_label(formView.valider) }}
+        {{ form_widget(formView.valider,{ 'attr':{'class':'article_form_valider'}}) }}
+    </div>
+
 {{ form_end(formView) }}
-</form>
+
 {% endblock main%}

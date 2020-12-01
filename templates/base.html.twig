@@ -15,10 +15,9 @@
         <nav>
             <ul>
                 {# path sert a redefinir une route pour les liens {{ path("articleShow") }} #}
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">lien1</a></li>
-                <li><a href="#">lien2</a></li>
-                <li><a href="#">lien3</a></li>
+                <li><a href="{{path('admin_articlelist')}}">Articles</a></li>
+                <li><a href="{{path('admin_categorylist')}}">Categories</a></li>
+                <li><a href="{{path('admin_article_insert')}}">Créer</a></li>
             </ul>
         </nav>
     </div>

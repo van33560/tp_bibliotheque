@@ -4,6 +4,7 @@
     box-sizing: border-box;
 
 
+
 }
 .resp {
     width: 100%;
@@ -11,18 +12,18 @@
 }
 /*base.html liens nav*/
 .row{
-    height:160px;
+    height:170px;
     display: flex;
     flex-direction: row ;
     justify-content: space-around;
-    background-color: #FBFBFB;
+    background-color:antiquewhite;
 
 
 }
 ul{
     display:flex;
     width:50%;
-    margin-left:30px;
+    margin-right: 50%;
     list-style: none;
 
 }
@@ -43,8 +44,19 @@ h1{
     padding:10px;
     margin-left:30%;
 }
+.categories{
+    width:200px;
+    height:200px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    border:solid 1px black;
+}
 .titre{
+    height:40px;
     font-size:medium;
+    margin-top: 20%;
+    background-color:navajowhite;
 }
 /* premiere page logo image*/
 .img{
@@ -59,12 +71,9 @@ h1{
 
 /*deuxieme page images et titres*/
 .container{
-    display: flex;
-    display:inline-block;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    width:100%;
 
+    display:block;
+    margin:10px 60px;
 }
 .article {
     display: flex;
@@ -94,7 +103,7 @@ h2{
 /*derniere pages*/
 p{
     font-size: medium;
-    font-family: "Arial Black";
+
 
 }
 .creer{
@@ -115,9 +124,7 @@ p{
 .form{
     width:30%;
     height:30%;
-    padding:20px;
-    margin-right: auto;
-
+    margin: 80px 80px;
     border: 2px solid black;
 
 }
@@ -125,8 +132,9 @@ p{
     margin-left:35%;
 }
 /*pages categories*/
-.categories{
-    margin-left:40%;
+.cat{
+    margin-left: 40%;
+    margin-top:10%;
 }
 .date{
     margin:20px 30px;
@@ -134,5 +142,16 @@ p{
 .action{
     margin-left: 30%;
     margin-bottom: 10%;
+}
+.clic{
+
+
+}
+.cont {
+    background:url("https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg") ;
+    width:100%;
+    padding-top: 30%;
+    padding-bottom: 10%;
+    border:solid 1px black;
 }
 

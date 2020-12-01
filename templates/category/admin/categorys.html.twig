@@ -9,23 +9,24 @@
 {% endblock message%}
 
 {% block main %}
-    <h1 class="categories">Mes  categories</h1>
+    <h1 class="cat">Mes  categories</h1>
 <div class="container">
     {# je rappel le contenu de mes categories j'affiche un titre avec une couleur#}
 {% for category in categorys %}
     {# je fais le lien vers la page category  #}
-<div class="date">
-    <a href="{{ path('categoryShow', {'id': category.id}) }}"></a>
-    {# j'affiche la date de création et publiée en ajoutant le filtre qui affichera la date  #}
-       <p class="date">{{ category.date|date("m/d/Y")}}</p>
-       <p class="date">{{ category.createdDate|date("m/d/Y")}}</p>
-</div>
-    <div class="action">
-        <button class=""><a href="{{ path('admin_category_update', {'id': category.id}) }}">modifier cette category</a></button>
-    {#  Je créer le lien qui va supprimer la category de la liste via son id #}
-         <button class=""><a href="{{ path('admin_category_delete', {'id': category.id}) }}">supprimer cette category</a></button>
-    </div>
-</div>
+    <article class="article">
+        <h2 class="titre">{{ category.title }}</h2>
+        <a href="{{ path('categoryShow', {'id': category.id}) }}"></a>
+        <div class="cont">
+            {# j'affiche la date de création et publiée en ajoutant le filtre qui affichera la date  #}
+            <button class="clic"><a href="{{ path('admin_category_update', {'id': category.id}) }}">modifier cette category</a></button>
+            {#  Je créer le lien qui va supprimer la category de la liste via son id #}
+            <button class="clic"><a href="{{ path('admin_category_delete', {'id': category.id}) }}">supprimer cette category</a></button>
+        </div>
+    </article>
+
+
+
 {% endfor %}
 
 
